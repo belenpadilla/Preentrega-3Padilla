@@ -11,7 +11,7 @@ class Productos {
 
 const calzaanimalblack = new Productos (1,"AnimalBlack", 3500, "fotos/calzayremeblondie.jpg");
 const calzaCamuflada = new Productos(2,"Camuflada", 3000, "fotos/calzacamuflada.jpg" );
-const calzaLeopardoB = new Productos(3,"leopardo Black", 4200,"../fotos/animalblack.jpg");
+const calzaLeopardoB = new Productos(3,"leopardo Black", 4200,"fotos/animalblack.jpg");
 const calzaDurazno = new Productos(4, "Texturizada Durazno", 4200,"fotos/calzadurazno.jpg");
 const calzaClv = new Productos(5,"calza CLV", 4200,"fotos/celesterosa.jpg");
 const calzaGrafito = new Productos(6,"Grafito", 4200,"fotos/grisgrafito.jpg");
