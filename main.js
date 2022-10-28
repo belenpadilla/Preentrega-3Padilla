@@ -108,12 +108,13 @@ const mostrarRopa = () => {
 }
 
 const agregarAlCarrito = (id) => {
-    const producto = producto.find((producto) => producto.id === id);
-    const agregadoAlCarrito = carrito.find((producto) => producto.id === id);
+    const producto1 = producto.find((producto1) => producto1.id === id);
+    const agregadoAlCarrito = carrito.find((producto1) => producto1.id === id);
     if(agregadoAlCarrito){
         agregadoAlCarrito.cantidad++;
     }else {
-        carrito.push(producto);
+        carrito.push(producto1);
+        localStorage.setItem("carrito",JSON.stringify(carrito));
     }
 }
 mostrarRopa();
@@ -146,7 +147,7 @@ const mostrarCarrito = () => {
 
             const boton = document.getElementById(`eliminar${producto.id}`);
             boton.addEventListener("click",()=> {
-                eliminarDelCarro(producto.id);
+                eliminarProducto(producto.id);
             })
     })
 }
@@ -156,7 +157,9 @@ const eliminarProducto = (id) => {
     const indice = carrito.indexOf(producto);
     carrito.splice(indice,1);
     mostrarCarrito();
+    localStorage.setItem("carrito",JSON.stringify(carrito));
 }
+
 
 const vaciar = document.getElementById("vaciar");
 
@@ -166,4 +169,5 @@ vaciar.addEventListener("click", () => {
 
 const vaciarTodoElCarrito = () => {
     carrito = [];
+    mostrarCarrito();
 }
